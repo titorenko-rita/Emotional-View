@@ -1,0 +1,8 @@
+{
+  "emot": [
+    {"time": "21.03.2026 14:00:00", "emotion": "Neutral", "number": 1},
+    {"time": "21.03.2026 14:00:01", "emotion": "Happy", "number": 2},
+    {"time": "21.03.2026 14:00:02", "emotion": "Happy", "number": 2},
+    {"time": "21.03.2026 14:00:03", "emotion": "Surprise", "number": 3}
+  ]
+}

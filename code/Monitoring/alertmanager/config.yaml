@@ -1,0 +1,19 @@
+#config.yaml
+global:
+  resolve_timeout: 5m
+  
+
+route:
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'telegram'
+  
+
+receivers:
+- name: 'telegram'
+  telegram_configs:
+  - bot_token: 6629656092:AAG8D8Jwk2uObW4fQL4UncgCbpmBgIOH4NY
+    api_url: 'https://api.telegram.org'
+    chat_id: -1001930091704
+    

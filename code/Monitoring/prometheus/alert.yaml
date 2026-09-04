@@ -1,0 +1,51 @@
+groups:
+- name: Контейнеры упали
+  rules:
+      - alert: frontend_container_last_seen
+        expr: time() - container_last_seen{name="frontend"} > 60
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Front не работает уже минуту"
+
+      - alert: api_container_last_seen
+        expr: time() - container_last_seen{name="api"} > 60
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "API не работает уже минуту"
+
+      - alert: ml_container_last_seen
+        expr: time() - container_last_seen{name="ml"} > 60
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "ML не работает уже минуту"
+          description: "ML не работает уже минуту"
+
+      - alert: postgres_container_last_seen
+        expr: time() - container_last_seen{name="postgres"} > 60
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "БД не работает уже минуту"
+
+      - alert: redis_container_last_seen
+        expr: time() - container_last_seen{name="redis"} > 60
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Redis не работает уже минуту"
+
+      - alert: PrometheusNotConnectedToAlertmanager
+        expr: prometheus_notifications_alertmanagers_discovered < 1
+        for: 0m
+        labels:
+          severity: critical
+        annotations:
+          summary: Prometheus не подключен к alertmanager 

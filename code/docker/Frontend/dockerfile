@@ -1,0 +1,14 @@
+# Dockerfile
+FROM node
+
+# create dir and assign the folder as the main
+RUN mkdir Frontend
+WORKDIR /Frontend
+
+# copy project, config, env
+COPY ./Frontend .
+COPY ./config.py .
+RUN npm install
+
+# открытия порта
+EXPOSE 8000
